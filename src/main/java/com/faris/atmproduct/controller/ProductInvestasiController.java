@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,10 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.faris.atmproduct.entity.Product;
 import com.faris.atmproduct.entity.ProductInvestasi;
 import com.faris.atmproduct.service.ProductInvestasiService;
-import com.faris.atmproduct.service.ProductService;
 
 @RestController
 @RequestMapping("api/v1/product")
@@ -34,7 +31,7 @@ public class ProductInvestasiController {
 	}
 	
 	@GetMapping("/list")
-	public ResponseEntity<List<ProductInvestasi>> getListTipeProduct()
+	public ResponseEntity<List<ProductInvestasi>> getListProductInvestasi()
 	{
 		List<ProductInvestasi> listProduct = null;
 		
@@ -48,7 +45,7 @@ public class ProductInvestasiController {
 	}
 	
 	@GetMapping("/search/{id}")
-	public ResponseEntity<ProductInvestasi> searchTipeProductById(@PathVariable("id") int id)
+	public ResponseEntity<ProductInvestasi> searchProductInvestasiById(@PathVariable("id") int id)
 	{
 		ProductInvestasi product = null;
 		
@@ -63,7 +60,7 @@ public class ProductInvestasiController {
 	}
 	
 	@PostMapping("/save")
-	public ResponseEntity<String> saveTipeProduct(@RequestBody ProductInvestasi prod)
+	public ResponseEntity<String> saveProductInvestasi(@RequestBody ProductInvestasi prod)
 	{
 		try {
 			prod.setHistoryDt(LocalDateTime.now());
@@ -111,7 +108,7 @@ public class ProductInvestasiController {
 	}
 	
 	@GetMapping("/searchorder")
-	public ResponseEntity<List<ProductInvestasi>> getListTipeProductByContainsNameAndOrderByNameAsc(@RequestParam("name") String name)
+	public ResponseEntity<List<ProductInvestasi>> getListProductInvestasiByContainsNameAndOrderByNameAsc(@RequestParam("name") String name)
 	{
 		List<ProductInvestasi> listProduct = null;
 		List<ProductInvestasi> finalListProduct = null;
