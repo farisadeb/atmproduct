@@ -1,2 +1,2 @@
 # atmproduct
-![alt text](https://github.com/farisadeb/pict/blob/main/atmcustomer_api_swagger.PNG?raw=true)
+![alt text](https://github.com/farisadeb/pict/blob/main/atmproduct_api_swagger.PNG?raw=true)
